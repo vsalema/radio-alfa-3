@@ -913,25 +913,19 @@ const audioMotion11 = new AudioMotionAnalyzer(
 document.getElementById("visualizer"),
 {
   source: audioElements[0],
-  height: 100,
+  height: 200,
   width: 400,
   ansiBands: false,
   showScaleX: false,
   bgAlpha: 0,
   overlay: true,
   mode: 6,
-  channelLayout: "single",
-  frequencyScale: "bark",
-  showPeaks: true,
+  frequencyScale: "log",
+  showPeaks: false,
   smoothing: 0.7,
   gradient: "prism",
   ledBars: true,
-  reflexFit: true,
- linearBoost: 1.8,
-  reflexAlpha: 0.25,
-    reflexBright: 1,
-  
-  weightingFilter: "D",
+  showPeaks: true,
   mirror: 1 });
 //# sourceURL=pen.js
     </script>
