@@ -65,7 +65,7 @@ body {
 	background: rgb(255, 255, 255);
 	background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 29%, rgba(165, 165, 165, 1) 100%);
 	background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 29%, rgba(165, 165, 165, 1) 100%);
-	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 29%, rgba(165, 165, 165, 1) 100%);
+	background: radial-gradient(ellipse at center, rgb(255, 255, 255) 29%, rgb(36, 35, 35) 100%);
 	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a5a5a5', GradientType=1);
 	border: 7px solid #adadad;
 	border-radius: 40% 40% 0 0;
@@ -252,15 +252,15 @@ body {
 }
 /* Slide Content */
 .radio-slide-content {
-  background: #0f0f0f;
-  border: 3px solid #adadad;
-  border-radius: 8px;
-  box-shadow: inset 18px 18px 30px -20px rgba(0, 0, 0, 0.8);
-  padding: 10px 20px;
-  text-align: center;
-  width: 65%;
-  height: 130px;
-  transition: height .2s ease-in-out;
+	background: #fff;
+	border: 3px solid #adadad;
+	border-radius: 8px;
+	box-shadow: inset 18px 18px 30px -20px rgba(0, 0, 0, 0.8);
+	padding: 10px 20px;
+	text-align: center;
+	width: 65%;
+	height: 130px;
+	transition: height .2s ease-in-out;
 }
 .radio-slide-title {
 	font-size: 18px;
@@ -474,18 +474,18 @@ color: red;
 	}
 
 }
-.visualizer {
+ .visualizer {
   padding: 1.3rem;
   border-radius: 1.5rem;
   position: absolute;
   overflow: hidden;
   margin-top: -210px;
   opacity: 0.8;
-  z-index: 0;
+  z-index: -1;
   height: 223px;
   width: 746px;
-  margin-left: -11px;
-  margin-top: 221px;
+  margin-left: -62px;
+  margin-top: 134px;
 }
   
   </style>
@@ -504,6 +504,11 @@ color: red;
     <div class="radio-screen">
       
       <div class="radio-slide-logo clip">
+        
+        <div class="container"></div> 
+        <div class="visualizer" id="visualizer"></div>
+        
+        
         <div class="slide-wrap">
           <ul>
 <li class="slide-one active" data-audio-src="https://n16a-eu.rcs.revma.com/amrbkhqtkm0uv?rj-ttl=5&rj-tok=AAABjyZZV10A8pNBeIWHkkzM-w" data-title="Radio Alfa" data-description="A Rádio Alfa é uma estação de rádio parisiense, dirigida à comunidade lusófona de França. Foi lançada a 5 de outubro de 1987 pela Associação Luso-Francesa do Audiovisual. A sede e os estúdios localizam-se em Créteil, no sudeste de Paris."
@@ -553,12 +558,8 @@ https://22673.live.streamtheworld.com/RADIO_RENASCENCAAAC.aac" data-title="Radio
         
         
         <div class="radio-play-btn">
-          <div class="container"></div> 
           
-          
-          
-          <div class="visualizer" id="visualizer">
-<audio class="music" hidden controls crossorigin="anonymous" loop src="https://n16a-eu.rcs.revma.com/amrbkhqtkm0uv?rj-ttl=5&rj-tok=AAABjyZZV10A8pNBeIWHkkzM-w" id="audio"></audio></div>
+<audio class="music" hidden controls crossorigin="anonymous" loop src="https://n16a-eu.rcs.revma.com/amrbkhqtkm0uv?rj-ttl=5&rj-tok=AAABjyZZV10A8pNBeIWHkkzM-w" id="audio"></audio>
           <i class="fa fa-play" aria-hidden="true"></i>
         </div>
       </div>
@@ -911,16 +912,24 @@ document.getElementById("visualizer"),
 {
   source: audioElements[0],
   height: 100,
-  width: 468,
+  width: 400,
   ansiBands: false,
   showScaleX: false,
   bgAlpha: 0,
   overlay: true,
   mode: 6,
-  frequencyScale: "log",
-  showPeaks: false,
+  channelLayout: "single",
+  frequencyScale: "bark",
+  showPeaks: true,
   smoothing: 0.7,
+  gradient: "prism",
   ledBars: true,
+  reflexFit: true,
+ linearBoost: 1.8,
+  reflexAlpha: 0.25,
+    reflexBright: 1,
+  
+  weightingFilter: "D",
   mirror: 1 });
 //# sourceURL=pen.js
     </script>
